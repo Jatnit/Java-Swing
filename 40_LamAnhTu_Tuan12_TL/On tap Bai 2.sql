@@ -1,0 +1,35 @@
+CREATE DATABASE QLSinhVien;
+
+USE QLSinhVien;
+
+CREATE TABLE STUDENTS(
+    MaSV NVARCHAR(50) PRIMARY KEY,
+    HoTen NVARCHAR(50),
+    Email NVARCHAR(50),
+    SoDT NVARCHAR(50),
+    GioiTinh NVARCHAR(50),
+    DiaChi NVARCHAR(50),
+    Hinh NVARCHAR(50)
+);
+
+
+CREATE TABLE GRADE(
+    ID int PRIMARY KEY,
+    MaSV NVARCHAR(50) FOREIGN KEY REFERENCES STUDENTS(MaSV),
+    TiengAnh int,
+    TinHoc int,
+    GFTC int
+
+);
+
+CREATE TABLE USERS(
+    username NVARCHAR(50),
+    password NVARCHAR(50),
+    role NVARCHAR(50)
+);
+
+INSERT INTO USERS VALUES ('Tu','123','QL');
+INSERT INTO USERS VALUES ('Anh','123','QL');
+INSERT INTO USERS VALUES ('Lam','123','QL');
+
+INSERT INTO STUDENTS VALUES ('SV2001216271',N'Lâm Anh Tú','jatn.itt@gmail.com','0918724783','Nam',N'106/35 Đường 51 - P14 - Gò vấp - TP.HCM','Hình');
